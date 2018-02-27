@@ -1,0 +1,18 @@
+<div class="post-header">
+  <h1><%= @article.title %></h1>
+  <span>
+    <%= link_to(edit_article_path) do  %>
+      <i class="fas fa-pencil-alt"></i>
+    <% end %>
+  </span>
+  <span>
+    <%= link_to(article_path, method: :delete, data: { confirm: "sure?"}) do %>
+      <i class="fas fa-trash-alt"></i>
+    <% end %>
+  </span>
+</div>
+
+<div class="image-container">
+  <%= image_tag @article.image, class: "article-image" unless @article.image.nil? %>
+</div>
+<p><%= @article.content %></p>

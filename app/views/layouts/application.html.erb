@@ -3,12 +3,26 @@
   <head>
     <title>RailsWikinimous</title>
     <%= csrf_meta_tags %>
+    <link href="https://use.fontawesome.com/releases/v5.0.7/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= yield %>
+    <div class="nav-bar">
+      <p><%= link_to "Wikinimous", articles_path, class: "nav-bar-item"%></p>
+      <p><%= link_to "New Article", new_article_path, class: "nav-bar-item" %></p>
+    </div>
+    <div class="wrapper">
+      <div class="main-container">
+        <div class="container">
+          <div class="row">
+            <%= yield %>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
